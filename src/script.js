@@ -10,7 +10,7 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // Song titles
-const songs = ['dream','melody','peace'];
+const songs = ['the perfect girl - mareux','melody','peace'];
 
 // Keep track of song
 let songIndex = 1;
@@ -21,8 +21,8 @@ loadSong(songs[songIndex]);
 // Update song details
 function loadSong(song) {
   title.innerText = song;
-  audio.src = `music/${song}.mp3`;
-  cover.src = `images/${song}.jpg`;
+  audio.src = `/songs/${song}.mp3`;
+  cover.src = `/album-covers/${song}.jpg`;
 }
 
 // Play song
