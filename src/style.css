@@ -130,9 +130,3 @@ height: 100%;
 width: 50%;
 transition: width 0.1s linear;
 }
-
-#title
-{
-    visibility: hidden;
-}
-
