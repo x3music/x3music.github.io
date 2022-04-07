@@ -10,21 +10,48 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // song titles and file names
-const songs = ['kiss me more', "the perfect girl", 'smokin out the window', 'boyfriend', 'middle of the night', 'leave the door open', 'heat waves'];
-const artists = ['doja cat ft sza', 'mareux', 'silk sonic', 'dove cameron', 'elley duhé', 'silk sonic', 'glass animals'];
-const songFiles = ['kiss-me-more_doja-cat_sza', 'the-perfect-girl_mareux', 'smokin-out-the-window_silk-sonic', 'boyfriend_dove-cameron', 'middle-of-the-night_elley-duhe', 'leave-the-door-open_silk-sonic', 'heat-waves_glass-animals'];
+const popSongs = ['kiss me more', "the perfect girl", 'smokin out the window', 'boyfriend', 'middle of the night', 'leave the door open', 'heat waves'];
+const popArtists = ['doja cat ft sza', 'mareux', 'silk sonic', 'dove cameron', 'elley duhé', 'silk sonic', 'glass animals'];
+const popSongFiles = ['kiss-me-more_doja-cat_sza', 'the-perfect-girl_mareux', 'smokin-out-the-window_silk-sonic', 'boyfriend_dove-cameron', 'middle-of-the-night_elley-duhe', 'leave-the-door-open_silk-sonic', 'heat-waves_glass-animals'];
 
+const rapSongs = [];
+const rapArtists = [];
+const rapSongFiles = [];
 // increments song
 let songIndex = 1;
 
-// loads stuff
-loadSong(songFiles[songIndex]);
+
+switch(document.getElementsByTagName("a")[0].id)
+{
+  case 'pop':
+    // loads stuff
+    loadPopSong(popSongFiles[songIndex]);
+
+}
 
 // updates song info
-function loadSong(songFile) 
+function loadPopSong(popSongFile) 
 {
-  title.innerText = songs[songIndex];
-  artist.innerText = artists[songIndex];
+  title.innerText = popSongs[songIndex];
+  artist.innerText = popArtists[songIndex];
+  audio.src = `../songs/pop-songs/${songFile}.mp3`;
+  cover.src = `../album-covers/pop-album-covers/${songFile}.jpg`;
+}
+
+// updates song info
+function loadRapSong(rappSongFile) 
+{
+  title.innerText = popSongs[songIndex];
+  artist.innerText = popArtists[songIndex];
+  audio.src = `../songs/pop-songs/${songFile}.mp3`;
+  cover.src = `../album-covers/pop-album-covers/${songFile}.jpg`;
+}
+
+// updates song info
+function loadCountrySong(countrySongFile) 
+{
+  title.innerText = popSongs[songIndex];
+  artist.innerText = popArtists[songIndex];
   audio.src = `../songs/pop-songs/${songFile}.mp3`;
   cover.src = `../album-covers/pop-album-covers/${songFile}.jpg`;
 }
