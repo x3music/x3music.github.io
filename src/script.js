@@ -91,7 +91,15 @@ function prevSong()
     songIndex = songs.length - 1;
   }
   
-  loadSong(songFiles[songIndex]);
+  switch(currentPage)
+  {
+    case '/genres/pop.html':
+      loadPopSong(popSongFiles[songIndex]);
+    case '/genres/rap.html':
+      loadRapSong(rapSongFiles[songIndex]);
+    case '/genres/country.html':
+      loadCountrySong(countrySongFiles[songIndex]);
+  }
   playSong();
 }
 
@@ -104,7 +112,15 @@ function nextSong() {
     songIndex = 0;
   }
   
-  loadSong(songs[songIndex]);
+  switch(currentPage)
+  {
+    case '/genres/pop.html':
+      loadPopSong(popSongFiles[songIndex]);
+    case '/genres/rap.html':
+      loadRapSong(rapSongFiles[songIndex]);
+    case '/genres/country.html':
+      loadCountrySong(countrySongFiles[songIndex]);
+  }
   playSong();
 }
 
