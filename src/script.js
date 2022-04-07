@@ -24,7 +24,7 @@ const countrySongFiles = [];
 
 let songIndex = 1;
 
-var currentPage =
+var currentPage = window.location.pathname;
 switch(document.getElementsByTagName("div")[0].id)
 {
   case 'pop':
@@ -129,6 +129,7 @@ function setProgress(e) {
 playBtn.addEventListener('click', () => 
 {
   const isPlaying = musicContainer.classList.contains('play');
+  console.log(currentPage);
 
   if (isPlaying) 
   {
