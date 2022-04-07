@@ -10,7 +10,7 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // song titles and file names
-const songs = ['kiss me more - doja cat ft sza', 'the perfect girl - mareux', 'smokin out the window - silk sonic', 'boyfriend - dove cameron', 'middle of the night - elley duhé', 'leave the door open - silk sonic', 'heat waves - glass animals'];
+const songs = ['kiss me more - doja cat ft sza', 'the perfect girl - &#10;mareux', 'smokin out the window - silk sonic', 'boyfriend - dove cameron', 'middle of the night - elley duhé', 'leave the door open - silk sonic', 'heat waves - glass animals'];
 const songFiles = ['kiss-me-more_doja-cat_sza', 'the-perfect-girl_mareux', 'smokin-out-the-window_silk-sonic', 'boyfriend_dove-cameron', 'middle-of-the-night_elley-duhe', 'leave-the-door-open_silk-sonic', 'heat-waves_glass-animals'];
 
 // increments song
