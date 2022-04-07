@@ -110,20 +110,27 @@ function prevSong()
 // func: next song
 function nextSong() {
   songIndex++;
-
-  if(songIndex > songs.length - 1)
-  {
-    songIndex = 0;
-  }
   
   switch(currentPage)
   {
     case '/genres/pop.html':
       loadPopSong(popSongFiles[songIndex]);
+      if(songIndex > popSongs.length - 1)
+      {
+        songIndex = 0;
+      }
     case '/genres/rap.html':
       loadRapSong(rapSongFiles[songIndex]);
+      if(songIndex > rapSongs.length - 1)
+      {
+        songIndex = 0;
+      }
     case '/genres/country.html':
       loadCountrySong(countrySongFiles[songIndex]);
+      if(songIndex > countrySongs.length - 1)
+      {
+        songIndex = 0;
+      }
     default:
       loadPopSong(popSongFiles[songIndex]);
   }
