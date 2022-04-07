@@ -72,7 +72,7 @@ function nextSong() {
   {
     songIndex = 0;
   }
-  if(songFileIndex > songs.length - 1)
+  if(songFileIndex > songFiles.length - 1)
   {
     songFileIndex = 0;
   }
