@@ -25,13 +25,13 @@ const countrySongFiles = [];
 let songIndex = 1;
 
 var currentPage = window.location.pathname;
-switch(document.getElementsByTagName("div")[0].id)
+switch(currentPage)
 {
-  case 'pop':
+  case '/genres/pop.html':
     loadPopSong(popSongFiles[songIndex]);
-  case 'rap':
+  case '/genres/rap.html':
     loadRapSong(rapSongFiles[songIndex]);
-  case 'country':
+  case '/genres/country.html':
     loadCountrySong(countrySongFiles[songIndex]);
 }
 
@@ -129,7 +129,6 @@ function setProgress(e) {
 playBtn.addEventListener('click', () => 
 {
   const isPlaying = musicContainer.classList.contains('play');
-  console.log(currentPage);
 
   if (isPlaying) 
   {
