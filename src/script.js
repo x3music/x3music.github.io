@@ -10,45 +10,24 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // song titles and file names
-const popSongs = ['kiss me more', "the perfect girl", 'smokin out the window', 'boyfriend', 'middle of the night', 'leave the door open', 'heat waves'];
-const popArtists = ['doja cat ft sza', 'mareux', 'silk sonic', 'dove cameron', 'elley duhé', 'silk sonic', 'glass animals'];
-const popSongFiles = ['kiss-me-more_doja-cat_sza', 'the-perfect-girl_mareux', 'smokin-out-the-window_silk-sonic', 'boyfriend_dove-cameron', 'middle-of-the-night_elley-duhe', 'leave-the-door-open_silk-sonic', 'heat-waves_glass-animals'];
+const songs = ['kiss me more', "the perfect girl", 'smokin out the window', 'boyfriend', 'middle of the night', 'leave the door open', 'heat waves'];
+const artists = ['doja cat ft sza', 'mareux', 'silk sonic', 'dove cameron', 'elley duhé', 'silk sonic', 'glass animals'];
+const songFiles = ['kiss-me-more_doja-cat_sza', 'the-perfect-girl_mareux', 'smokin-out-the-window_silk-sonic', 'boyfriend_dove-cameron', 'middle-of-the-night_elley-duhe', 'leave-the-door-open_silk-sonic', 'heat-waves_glass-animals'];
 
 // increments song
 let songIndex = 1;
 
-switch(document.getElementsByTagName("div")[0].id
+// loads stuff
+loadSong(songFiles[songIndex]);
+
+// updates song info
+function loadSong(songFile) 
 {
-  case 'pop':
-    loadPopSong(popSongFiles[songIndex]);
-  case 'rap':
-    loadRapSong(rapSongFiles[songIndex]);
-  case 'country':
-    loadCountrySong(countrySongFiles[songIndex]);
+  title.innerText = songs[songIndex];
+  artist.innerText = artists[songIndex];
+  audio.src = `../songs/pop-songs/${songFile}.mp3`;
+  cover.src = `../album-covers/pop-album-covers/${songFile}.jpg`;
 }
-  function loadPopSong(songFile) 
-  {
-    title.innerText = popSongs[songIndex];
-    artist.innerText = popArtists[songIndex];
-    audio.src = `../songs/pop-songs/${songFile}.mp3`;
-    cover.src = `../album-covers/pop-album-covers/${songFile}.jpg`;
-  }
-      
-  function loadRapSong(songFile) 
-  {
-    title.innerText = songs[songIndex];
-    artist.innerText = artists[songIndex];
-    audio.src = `../songs/rap-songs/${songFile}.mp3`;
-    cover.src = `../album-covers/rap-album-covers/${songFile}.jpg`;
-  }
-      
-  function loadCountrySong(songFile) 
-  {
-    title.innerText = songs[songIndex];
-    artist.innerText = artists[songIndex];
-    audio.src = `../songs/country-songs/${songFile}.mp3`;
-    cover.src = `../album-covers/country-album-covers/${songFile}.jpg`;
-  }
 
 // func: play song
 function playSong() 
@@ -139,5 +118,5 @@ audio.addEventListener('timeupdate', updateProgress);
 // evemt listener on progress bar
 progressContainer.addEventListener('click', setProgress);
 
-// goes to next song if cur song end
+// goes to next song if cur song ends (hopefully)
 audio.addEventListener('ended', nextSong);
