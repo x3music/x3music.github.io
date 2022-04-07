@@ -9,25 +9,25 @@ const progressContainer = document.getElementById('progress-container');
 const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
-// Song titles
-const songs = ['melody', 'the perfect girl - mareux', 'peace'];
-const songFiles = ['melody', 'the-perfect-girl_mareux', 'peace'];
+// song titles and file names
+const songs = ['kiss me more - doja cat ft sza', 'the perfect girl - mareux', 'smokin out the window - silk sonic', 'boyfriend - dove cameron', 'middle of the night - elley duhé', 'leave the door open - silk sonic', 'heat waves - glass animals'];
+const songFiles = ['kiss-me-more_doja-cat_sza', 'the-perfect-girl_mareux', 'smokin-out-the-window_silk-sonic', 'boyfriend_dove-cameron', 'middle-of-the-night_elley-duhe', 'leave-the-door-open_silk-sonic', 'heat-waves_glass-animals'];
 
-// Keep track of song
+// increments song
 let songIndex = 1;
 let songFileIndex = 1;
 
-// Initially load song details into DOM
+// loads stuff
 loadSong(songs[songIndex], songFiles[songFileIndex]);
 
-// Update song details
+// updates song info
 function loadSong(song, songFile) {
   title.innerText = song;
   audio.src = `../songs/pop-songs/${songFile}.mp3`;
   cover.src = `../album-covers/pop-album-covers/${songFile}.jpg`;
 }
 
-// Play song
+// func: play song
 function playSong() {
   musicContainer.classList.add('play');
   playBtn.querySelector('i.fas').classList.remove('fa-play');
@@ -36,7 +36,7 @@ function playSong() {
   audio.play();
 }
 
-// Pause song
+// func: pause song
 function pauseSong() {
   musicContainer.classList.remove('play');
   playBtn.querySelector('i.fas').classList.add('fa-play');
@@ -45,7 +45,7 @@ function pauseSong() {
   audio.pause();
 }
 
-// Previous song
+// func: prev song
 function prevSong() {
   songIndex--;
   songFileIndex--;
@@ -63,7 +63,7 @@ function prevSong() {
   playSong();
 }
 
-// Next song
+// func: next song
 function nextSong() {
   songIndex++;
   songFileIndex++;
@@ -81,14 +81,14 @@ function nextSong() {
   playSong();
 }
 
-// Update progress bar
+// updates progress bar
 function updateProgress(e) {
   const { duration, currentTime } = e.srcElement;
   const progressPercent = (currentTime / duration) * 100;
   progress.style.width = `${progressPercent}%`;
 }
 
-// Set progress bar
+// creates progress bar
 function setProgress(e) {
   const width = this.clientWidth
   const clickX = e.offsetX
@@ -97,7 +97,7 @@ function setProgress(e) {
   audio.currentTime = (clickX / width) * duration;
 }
 
-// Event listeners
+// event listeners
 playBtn.addEventListener('click', () => 
 {
   const isPlaying = musicContainer.classList.contains('play');
@@ -112,15 +112,15 @@ playBtn.addEventListener('click', () =>
   }
 });
 
-// Change song
+// change song stuff
 prevBtn.addEventListener('click', prevSong);
 nextBtn.addEventListener('click', nextSong);
 
-// Time/song update
+// updates song info
 audio.addEventListener('timeupdate', updateProgress);
 
-// Click on progress bar
+// evemt listener on progress bar
 progressContainer.addEventListener('click', setProgress);
 
-// Song ends
+// goes to next song if cur song ends (hopefully)
 audio.addEventListener('ended', nextSong);
