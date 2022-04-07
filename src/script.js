@@ -18,6 +18,10 @@ const rapSongs = [];
 const rapArtists = [];
 const rapSongFiles = [];
 
+const countrySongs = [];
+const countryArtists = [];
+const countrySongFiles = [];
+
 let songIndex = 1;
 
 switch(document.getElementsByTagName("div")[0].id)
