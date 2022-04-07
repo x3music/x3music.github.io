@@ -138,11 +138,10 @@ body
 
 #title
 {
-  font-weight: bold;
+  color: white;
 }
 
-#title, #artist
+#artist
 {
-  color: white;
-  font-size: 1em;
+  color: #eeefff;
 }
