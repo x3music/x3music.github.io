@@ -10,7 +10,7 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // Song titles
-const songs = ['the perfect girl - mareux','melody','peace'];
+const songs = ['melody','the-perfect-girl_mareux','peace'];
 
 // Keep track of song
 let songIndex = 1;
