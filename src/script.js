@@ -10,19 +10,21 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // Song titles
-const songs = ['melody','the-perfect-girl_mareux','peace'];
+const songs = ['melody', 'the perfect girl - mareux', 'peace'];
+const songFiles = ['melody', 'the-perfect-girl_mareux', 'peace'];
 
 // Keep track of song
 let songIndex = 1;
+let songFileIndex = 1;
 
 // Initially load song details into DOM
-loadSong(songs[songIndex]);
+loadSong(songFiles[songIndex]);
 
 // Update song details
-function loadSong(song) {
-  song = title.innerText;
-  audio.src = `../songs/pop-songs/${song}.mp3`;
-  cover.src = `../album-covers/${song}.jpg`;
+function loadSong(song, songFile) {
+  title.innerText = song;
+  audio.src = `../songs/pop-songs/${songFile}.mp3`;
+  cover.src = `../album-covers/pop-songs/${songFile}.jpg`;
 }
 
 // Play song
@@ -46,26 +48,36 @@ function pauseSong() {
 // Previous song
 function prevSong() {
   songIndex--;
+  songFileIndex--;
 
-  if (songIndex < 0) {
+  if(songIndex < 0) 
+  {
     songIndex = songs.length - 1;
   }
+  if(songFileIndex < 0)
+  {
+    songFileIndex = songFiles.length - 1;
+  }
 
-  loadSong(songs[songIndex]);
-
+  loadSong(songs[songIndex], songFiles[songFileIndex]);
   playSong();
 }
 
 // Next song
 function nextSong() {
   songIndex++;
+  songFileIndex++;
 
-  if (songIndex > songs.length - 1) {
+  if(songIndex > songs.length - 1)
+  {
     songIndex = 0;
   }
-
-  loadSong(songs[songIndex]);
-
+  if(songFileIndex > songs.length - 1)
+  {
+    songFileIndex = 0;
+  }
+  
+  loadSong(songs[songIndex], songFiles[songFileIndex]);
   playSong();
 }
 
