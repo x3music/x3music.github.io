@@ -18,7 +18,7 @@ let songIndex = 1;
 let songFileIndex = 1;
 
 // Initially load song details into DOM
-loadSong(songFiles[songIndex]);
+loadSong(songs[songIndex], songFiles[songIndex]);
 
 // Update song details
 function loadSong(song, songFile) {
