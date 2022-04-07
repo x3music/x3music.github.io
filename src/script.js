@@ -64,6 +64,7 @@ function loadCountrySong(songFile)
 // func: play song
 function playSong() 
 {
+  console.log(currentPage);
   musicContainer.classList.add('play');
   playBtn.querySelector('i.fas').classList.remove('fa-play');
   playBtn.querySelector('i.fas').classList.add('fa-pause');
