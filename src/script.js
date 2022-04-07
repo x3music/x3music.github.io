@@ -17,20 +17,21 @@ const popSongFiles = ['kiss-me-more_doja-cat_sza', 'the-perfect-girl_mareux', 's
 const rapSongs = [];
 const rapArtists = [];
 const rapSongFiles = [];
-// increments song
+
 let songIndex = 1;
 
-
-switch(document.getElementsByTagName("a")[0].id)
+switch(document.getElementsByTagName("div")[0].id)
 {
   case 'pop':
-    // loads stuff
     loadPopSong(popSongFiles[songIndex]);
-
+  case 'rap':
+    loadRapSong(rapSongFiles[songIndex]);
+  case 'country':
+    loadCountrySong(countrySongFiles[songIndex]);
 }
 
 // updates song info
-function loadPopSong(popSongFile) 
+function loadPopSong(songFile) 
 {
   title.innerText = popSongs[songIndex];
   artist.innerText = popArtists[songIndex];
@@ -38,22 +39,21 @@ function loadPopSong(popSongFile)
   cover.src = `../album-covers/pop-album-covers/${songFile}.jpg`;
 }
 
-// updates song info
-function loadRapSong(rappSongFile) 
+function loadRapSong(songFile) 
 {
   title.innerText = popSongs[songIndex];
   artist.innerText = popArtists[songIndex];
-  audio.src = `../songs/pop-songs/${songFile}.mp3`;
-  cover.src = `../album-covers/pop-album-covers/${songFile}.jpg`;
+  audio.src = `../songs/rap-songs/${songFile}.mp3`;
+  cover.src = `../album-covers/rap-album-covers/${songFile}.jpg`;
 }
 
 // updates song info
-function loadCountrySong(countrySongFile) 
+function loadCountrySong(songFile) 
 {
-  title.innerText = popSongs[songIndex];
-  artist.innerText = popArtists[songIndex];
-  audio.src = `../songs/pop-songs/${songFile}.mp3`;
-  cover.src = `../album-covers/pop-album-covers/${songFile}.jpg`;
+  title.innerText = countrySongs[songIndex];
+  artist.innerText = countryArtists[songIndex];
+  audio.src = `../songs/country-songs/${songFile}.mp3`;
+  cover.src = `../album-covers/country-album-covers/${songFile}.jpg`;
 }
 
 // func: play song
