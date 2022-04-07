@@ -33,6 +33,8 @@ switch(currentPage)
     loadRapSong(rapSongFiles[songIndex]);
   case '/genres/country.html':
     loadCountrySong(countrySongFiles[songIndex]);
+  default:
+    loadPopSong(popSongFiles[songIndex]);
 }
 
 // updates song info
@@ -99,6 +101,8 @@ function prevSong()
       loadRapSong(rapSongFiles[songIndex]);
     case '/genres/country.html':
       loadCountrySong(countrySongFiles[songIndex]);
+    default:
+      loadPopSong(popSongFiles[songIndex]); 
   }
   playSong();
 }
@@ -120,6 +124,8 @@ function nextSong() {
       loadRapSong(rapSongFiles[songIndex]);
     case '/genres/country.html':
       loadCountrySong(countrySongFiles[songIndex]);
+    default:
+      loadPopSong(popSongFiles[songIndex]);
   }
   playSong();
 }
