@@ -24,6 +24,7 @@ const countrySongFiles = [];
 
 let songIndex = 1;
 
+var currentPage =
 switch(document.getElementsByTagName("div")[0].id)
 {
   case 'pop':
