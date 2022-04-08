@@ -25,14 +25,18 @@ const countrySongFiles = [];
 let songIndex = 1;
 
 var currentPage = window.location.pathname;
+
 switch(currentPage)
 {
   case '/genres/pop.html':
     loadPopSong(popSongFiles[songIndex]);
+    break;
   case '/genres/rap.html':
     loadRapSong(rapSongFiles[songIndex]);
-  case '\/genres\/country.html':
+    break;
+  case '/genres/country.html':
     loadCountrySong(countrySongFiles[songIndex]);
+    break;
 }
 
 // updates song info
@@ -64,7 +68,6 @@ function loadCountrySong(songFile)
 // func: play song
 function playSong() 
 {
-  console.log(currentPage);
   musicContainer.classList.add('play');
   playBtn.querySelector('i.fas').classList.remove('fa-play');
   playBtn.querySelector('i.fas').classList.add('fa-pause');
@@ -93,20 +96,23 @@ function prevSong()
       loadPopSong(popSongFiles[songIndex]);
       if(songIndex < 0) 
       {
-        songIndex = songs.length - 1;
+        songIndex = popSongs.length - 1;
       }
+      break;
     case '/genres/rap.html':
       loadRapSong(rapSongFiles[songIndex]);
       if(songIndex < 0) 
       {
-        songIndex = songs.length - 1;
+        songIndex = rapSongs.length - 1;
       }
+      break;
     case '/genres/country.html':
       loadCountrySong(countrySongFiles[songIndex]);
       if(songIndex < 0) 
       {
-        songIndex = songs.length - 1;
+        songIndex = countrySongs.length - 1;
       }
+      break;
   }
   playSong();
 }
@@ -123,18 +129,21 @@ function nextSong() {
       {
         songIndex = 0;
       }
+      break;
     case '/genres/rap.html':
       loadRapSong(rapSongFiles[songIndex]);
       if(songIndex > rapSongs.length - 1)
       {
         songIndex = 0;
       }
+      break;
     case '/genres/country.html':
       loadCountrySong(countrySongFiles[songIndex]);
       if(songIndex > countrySongs.length - 1)
       {
         songIndex = 0;
       }
+      break;
   }
   playSong();
 }
