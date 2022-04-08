@@ -93,25 +93,25 @@ function prevSong()
   switch(currentPage)
   {
     case '/genres/pop.html':
-      loadPopSong(popSongFiles[songIndex]);
       if(songIndex < 0) 
       {
         songIndex = popSongs.length - 1;
       }
+      loadPopSong(popSongFiles[songIndex]);
       break;
     case '/genres/rap.html':
-      loadRapSong(rapSongFiles[songIndex]);
       if(songIndex < 0) 
       {
         songIndex = rapSongs.length - 1;
       }
+      loadRapSong(rapSongFiles[songIndex]);
       break;
     case '/genres/country.html':
-      loadCountrySong(countrySongFiles[songIndex]);
       if(songIndex < 0) 
       {
         songIndex = countrySongs.length - 1;
       }
+      loadCountrySong(countrySongFiles[songIndex]);
       break;
   }
   playSong();
@@ -124,25 +124,26 @@ function nextSong() {
   switch(currentPage)
   {
     case '/genres/pop.html':
-      loadPopSong(popSongFiles[songIndex]);
       if(songIndex > popSongs.length - 1)
       {
         songIndex = 0;
       }
+      loadPopSong(popSongFiles[songIndex]);
       break;
     case '/genres/rap.html':
-      loadRapSong(rapSongFiles[songIndex]);
+      
       if(songIndex > rapSongs.length - 1)
       {
         songIndex = 0;
       }
+      loadRapSong(rapSongFiles[songIndex]);
       break;
     case '/genres/country.html':
-      loadCountrySong(countrySongFiles[songIndex]);
       if(songIndex > countrySongs.length - 1)
       {
         songIndex = 0;
       }
+      loadCountrySong(countrySongFiles[songIndex]);
       break;
   }
   playSong();
