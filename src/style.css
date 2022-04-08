@@ -4,10 +4,9 @@
 box-sizing: border-box;
 }
 
-h4
+#title, #artist
 {
   color: white;
-  font-size: .9em;
 }
 
 body
