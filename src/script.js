@@ -10,7 +10,7 @@ const title = document.getElementById('title');
 const cover = document.getElementById('cover');
 
 // song titles and file names
-const popSongs = ['kiss me more', "the perfect girl", 'smokin out the window', 'boyfriend', 'middle of the night', 'leave the door open', 'heat waves'];
+const popSongs = ['kiss me more', 'the perfect girl', 'smokin out the window', 'boyfriend', 'middle of the night', 'leave the door open', 'heat waves'];
 const popArtists = ['doja cat ft sza', 'mareux', 'silk sonic', 'dove cameron', 'elley duhé', 'silk sonic', 'glass animals'];
 const popSongFiles = ['kiss-me-more_doja-cat_sza', 'the-perfect-girl_mareux', 'smokin-out-the-window_silk-sonic', 'boyfriend_dove-cameron', 'middle-of-the-night_elley-duhe', 'leave-the-door-open_silk-sonic', 'heat-waves_glass-animals'];
 
@@ -27,11 +27,11 @@ let songIndex = 1;
 var currentPage = window.location.pathname;
 switch(currentPage)
 {
-  case "/genres/pop.html":
+  case '\/genres\/pop.html':
     loadPopSong(popSongFiles[songIndex]);
-  case "/genres/rap.html":
+  case '\/genres\/rap.html':
     loadRapSong(rapSongFiles[songIndex]);
-  case "/genres/country.html":
+  case '\/genres\/country.html':
     loadCountrySong(countrySongFiles[songIndex]);
 }
 
@@ -89,19 +89,19 @@ function prevSong()
   
   switch(currentPage)
   {
-    case "/genres/pop.html":
+    case '\/genres\/pop.html':
       loadPopSong(popSongFiles[songIndex]);
       if(songIndex < 0) 
       {
         songIndex = songs.length - 1;
       }
-    case "/genres/rap.html":
+    case '\/genres\/rap.html':
       loadRapSong(rapSongFiles[songIndex]);
       if(songIndex < 0) 
       {
         songIndex = songs.length - 1;
       }
-    case "/genres/country.html":
+    case '\/genres\/country.html':
       loadCountrySong(countrySongFiles[songIndex]);
       if(songIndex < 0) 
       {
@@ -117,19 +117,19 @@ function nextSong() {
   
   switch(currentPage)
   {
-    case "/genres/pop.html":
+    case '\/genres\/pop.html':
       loadPopSong(popSongFiles[songIndex]);
       if(songIndex > popSongs.length - 1)
       {
         songIndex = 0;
       }
-    case "/genres/rap.html":
+    case '\/genres\/rap.html':
       loadRapSong(rapSongFiles[songIndex]);
       if(songIndex > rapSongs.length - 1)
       {
         songIndex = 0;
       }
-    case "/genres/country.html":
+    case '\/genres\/country.html':
       loadCountrySong(countrySongFiles[songIndex]);
       if(songIndex > countrySongs.length - 1)
       {
