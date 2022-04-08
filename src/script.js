@@ -27,9 +27,9 @@ let songIndex = 1;
 var currentPage = window.location.pathname;
 switch(currentPage)
 {
-  case '\/genres\/pop.html':
+  case '/genres/pop.html':
     loadPopSong(popSongFiles[songIndex]);
-  case '\/genres\/rap.html':
+  case '/genres/rap.html':
     loadRapSong(rapSongFiles[songIndex]);
   case '\/genres\/country.html':
     loadCountrySong(countrySongFiles[songIndex]);
@@ -89,19 +89,19 @@ function prevSong()
   
   switch(currentPage)
   {
-    case '\/genres\/pop.html':
+    case '/genres/pop.html':
       loadPopSong(popSongFiles[songIndex]);
       if(songIndex < 0) 
       {
         songIndex = songs.length - 1;
       }
-    case '\/genres\/rap.html':
+    case '/genres/rap.html':
       loadRapSong(rapSongFiles[songIndex]);
       if(songIndex < 0) 
       {
         songIndex = songs.length - 1;
       }
-    case '\/genres\/country.html':
+    case '/genres/country.html':
       loadCountrySong(countrySongFiles[songIndex]);
       if(songIndex < 0) 
       {
@@ -117,19 +117,19 @@ function nextSong() {
   
   switch(currentPage)
   {
-    case '\/genres\/pop.html':
+    case '/genres/pop.html':
       loadPopSong(popSongFiles[songIndex]);
       if(songIndex > popSongs.length - 1)
       {
         songIndex = 0;
       }
-    case '\/genres\/rap.html':
+    case '/genres/rap.html':
       loadRapSong(rapSongFiles[songIndex]);
       if(songIndex > rapSongs.length - 1)
       {
         songIndex = 0;
       }
-    case '\/genres\/country.html':
+    case '/genres/country.html':
       loadCountrySong(countrySongFiles[songIndex]);
       if(songIndex > countrySongs.length - 1)
       {
