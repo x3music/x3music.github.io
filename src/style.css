@@ -4,12 +4,22 @@
 box-sizing: border-box;
 }
 
+/* yellow orange gradient: background-image: linear-gradient(0deg, rgba(251,252,13,1) 23.8%, rgba(255,170,1,0.99) 92%); */
+#pop
+{
+  background-image: linear-gradient(0deg, rgba(57,255,20,1) 23.8%, rgba(255,16,240,0.99) 92%);
+}
+
+#rap
+{
+  background-image: linear-gradient(0deg, rgba(50,50,50,1) 23.8%, rgba(255,69,0,0.99) 92%); 
+}
+
 body
 {
   height: 100vh;
   margin: 0;
   font-family: 'Lato', sans-serif;
-  background-image: linear-gradient(0deg, rgba(251,252,13,1) 23.8%, rgba(255,170,1,0.99) 92%);
 
   display: flex;
   flex-direction: column;
