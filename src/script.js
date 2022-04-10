@@ -57,8 +57,8 @@ function loadPopSong(songFile)
 
 function loadRapSong(songFile) 
 {
-  title.innerText = popSongs[songIndex];
-  artist.innerText = popArtists[songIndex];
+  title.innerText = rapSongs[songIndex];
+  artist.innerText = rapArtists[songIndex];
   audio.src = `../songs/rap-songs/${songFile}.mp3`;
   cover.src = `../album-covers/rap-album-covers/${songFile}.jpg`;
 }
