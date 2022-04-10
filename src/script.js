@@ -14,13 +14,17 @@ const popSongs = ['kiss me more', 'the perfect girl', 'smokin out the window', '
 const popArtists = ['doja cat ft sza', 'mareux', 'silk sonic', 'dove cameron', 'elley duhé', 'silk sonic', 'glass animals'];
 const popSongFiles = ['kiss-me-more_doja-cat_sza', 'the-perfect-girl_mareux', 'smokin-out-the-window_silk-sonic', 'boyfriend_dove-cameron', 'middle-of-the-night_elley-duhe', 'leave-the-door-open_silk-sonic', 'heat-waves_glass-animals'];
 
-const rapSongs = [];
-const rapArtists = [];
-const rapSongFiles = [];
+const rapSongs = ['catch me outside', 'e-er', 'love sosa', 'money so big', 'nuketown'];
+const rapArtists = ['ski mask the slump god', 'ski mask the slump god, danny towers & lil yachty', 'chief keef', 'yeat', 'ski mask the slump god'];
+const rapSongFiles = ['catch-me-outside_ski-mask', 'e-er_ski-mask_danny-towers_lil-yachty', 'love-sosa_chief-keef', 'money-so-big_yeat', 'nuketown_ski-mask'];
 
 const countrySongs = [];
 const countryArtists = [];
 const countrySongFiles = [];
+
+const trapSongs = ['love sosa'];
+const trapArtists = ['chief keef (rl grime remix)'];
+const trapSongFiles = ['love-sosa_chief-keef_trap'];
 
 let songIndex = 1;
 
@@ -36,6 +40,9 @@ switch(currentPage)
     break;
   case '/genres/country.html':
     loadCountrySong(countrySongFiles[songIndex]);
+    break;
+  case '/genres/trap.html':
+    loadTrapSong(trapSongFiles[songIndex]);
     break;
 }
 
@@ -56,13 +63,20 @@ function loadRapSong(songFile)
   cover.src = `../album-covers/rap-album-covers/${songFile}.jpg`;
 }
 
-// updates song info
 function loadCountrySong(songFile) 
 {
   title.innerText = countrySongs[songIndex];
   artist.innerText = countryArtists[songIndex];
   audio.src = `../songs/country-songs/${songFile}.mp3`;
   cover.src = `../album-covers/country-album-covers/${songFile}.jpg`;
+}
+
+function loadTrapSong(songFile) 
+{
+  title.innerText = trapSongs[songIndex];
+  artist.innerText = trapArtists[songIndex];
+  audio.src = `../songs/trap-songs/${songFile}.mp3`;
+  cover.src = `../album-covers/trap-album-covers/${songFile}.jpg`;
 }
 
 // func: play song
@@ -113,6 +127,13 @@ function prevSong()
       }
       loadCountrySong(countrySongFiles[songIndex]);
       break;
+    case '/genres/trap.html':
+      if(songIndex < 0) 
+      {
+        songIndex = trapSongs.length - 1;
+      }
+      loadTrapSong(trapSongFiles[songIndex]);
+      break;
   }
   playSong();
 }
@@ -131,7 +152,6 @@ function nextSong() {
       loadPopSong(popSongFiles[songIndex]);
       break;
     case '/genres/rap.html':
-      
       if(songIndex > rapSongs.length - 1)
       {
         songIndex = 0;
@@ -144,6 +164,13 @@ function nextSong() {
         songIndex = 0;
       }
       loadCountrySong(countrySongFiles[songIndex]);
+      break;
+    case '/genres/trap.html':
+      if(songIndex > trapSongs.length - 1)
+      {
+        songIndex = 0;
+      }
+      loadTrapSong(trapSongFiles[songIndex]);
       break;
   }
   playSong();

@@ -1,3 +1,5 @@
+/* REMOVE ALL BG COLOR, BOX SHADOW, AND ICON COLOR STYLING FROM CSS TO HTML UNDER STYLE="". SHOULD BE APPLIED TO POP.HTML BUT NOT OTHERS*/
+
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 *{
@@ -12,7 +14,17 @@ box-sizing: border-box;
 
 #rap
 {
-  background-image: linear-gradient(0deg, rgba(50,50,50,1) 23.8%, rgba(255,69,0,0.99) 92%); 
+  background-image: linear-gradient(0deg, rgba(50, 50, 50, 1) 23.8%, rgba(255, 69, 0, 0.99) 92%); 
+}
+
+#country
+{
+  background-image: linear-gradient(0deg, rgba(88, 49, 30, 1) 23.8%, rgba(243, 164, 54, 0.99) 92%); 
+}
+
+#trap
+{
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 1) 23.8%, rgba(255, 217, 0, 0.99) 92%); 
 }
 
 body
@@ -31,7 +43,6 @@ body
 {
   background-color: #000;
   border-radius: 15px;
-  box-shadow: 0 20px 20px 0 rgb(121 195 192);
   display: flex;
   padding: 20px 30px;
   position: relative;
@@ -82,7 +93,6 @@ body
 {
   background-color: #000;
   border: 0;
-  color: #f7be04;
   font-size: 20px;
   cursor: pointer;
   padding: 10px;
@@ -92,7 +102,6 @@ body
 
 .action-btn.action-btn-big 
 {
-  color: #fcb51b;
   font-size: 30px;
 }
 
@@ -103,7 +112,6 @@ body
 
 .audio-info 
 {
-  background-color: rgb(113 160 200);
   border-radius: 15px 15px 0 0;
   position: absolute;
   top: 0;
